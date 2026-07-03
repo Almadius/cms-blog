@@ -3,21 +3,21 @@
 {block name="content"}
 <article class="category-page">
     <header class="page-header">
-        <h1>{$category.name|escape}</h1>
-        {if $category.description}
-            <p class="page-header__description">{$category.description|escape}</p>
+        <h1>{$category->name|escape}</h1>
+        {if $category->description}
+            <p class="page-header__description">{$category->description|escape}</p>
         {/if}
     </header>
 
     <div class="sort-controls">
         <span>Сортировка:</span>
-        <a href="/category/{$category.slug|escape}?sort=date&order=desc"
+        <a href="/category/{$category->slug|escape}?sort=date&order=desc"
            class="sort-link{if $pagination.sort == 'date' && $pagination.order == 'desc'} is-active{/if}">По дате ↓</a>
-        <a href="/category/{$category.slug|escape}?sort=date&order=asc"
+        <a href="/category/{$category->slug|escape}?sort=date&order=asc"
            class="sort-link{if $pagination.sort == 'date' && $pagination.order == 'asc'} is-active{/if}">По дате ↑</a>
-        <a href="/category/{$category.slug|escape}?sort=views&order=desc"
+        <a href="/category/{$category->slug|escape}?sort=views&order=desc"
            class="sort-link{if $pagination.sort == 'views' && $pagination.order == 'desc'} is-active{/if}">По просмотрам ↓</a>
-        <a href="/category/{$category.slug|escape}?sort=views&order=asc"
+        <a href="/category/{$category->slug|escape}?sort=views&order=asc"
            class="sort-link{if $pagination.sort == 'views' && $pagination.order == 'asc'} is-active{/if}">По просмотрам ↑</a>
     </div>
 
@@ -31,7 +31,7 @@
         </div>
 
         {include file="partials/pagination.tpl"
-            base_url="/category/{$category.slug|escape}"
+            base_url="/category/{$category->slug|escape}"
             pagination=$pagination}
     {/if}
 </article>

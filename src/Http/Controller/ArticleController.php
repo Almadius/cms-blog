@@ -8,7 +8,7 @@ use App\Exception\NotFoundException;
 use App\Http\Request;
 use App\Http\Response;
 use App\Service\ArticleService;
-use Smarty;
+use Smarty\Smarty;
 
 final class ArticleController
 {

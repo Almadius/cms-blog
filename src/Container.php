@@ -16,14 +16,10 @@ use App\Service\ArticleService;
 use App\Service\CategoryService;
 use PDO;
 use RuntimeException;
-use Smarty;
+use Smarty\Smarty;
 
-/**
- * Minimal hand-rolled DI container — explicit wiring, no magic.
- */
 final class Container
 {
-    /** @var array<string, object> */
     private array $instances = [];
 
     public function __construct(

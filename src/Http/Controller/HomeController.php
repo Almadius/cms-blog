@@ -7,7 +7,7 @@ namespace App\Http\Controller;
 use App\Http\Request;
 use App\Http\Response;
 use App\Service\CategoryService;
-use Smarty;
+use Smarty\Smarty;
 
 final class HomeController
 {
