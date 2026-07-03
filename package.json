@@ -1,0 +1,11 @@
+{
+  "name": "php-blog-cms",
+  "private": true,
+  "scripts": {
+    "build:css": "sass public/assets/scss/style.scss public/assets/css/style.css --style=compressed",
+    "watch:css": "sass --watch public/assets/scss/style.scss:public/assets/css/style.css"
+  },
+  "devDependencies": {
+    "sass": "1.77.6"
+  }
+}
