@@ -8,9 +8,6 @@ use DateTimeImmutable;
 
 final class Category
 {
-    /**
-     * @param list<Article> $articles
-     */
     public function __construct(
         public readonly int $id,
         public readonly string $name,

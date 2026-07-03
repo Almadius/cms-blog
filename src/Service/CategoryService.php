@@ -19,9 +19,6 @@ final class CategoryService
     ) {
     }
 
-    /**
-     * @return list<Category>
-     */
     public function getHomePageData(): array
     {
         $limit = (int) $this->config->get('pagination.home_articles_per_category', 3);
@@ -41,9 +38,6 @@ final class CategoryService
         }, $categories);
     }
 
-    /**
-     * @return array{category: Category, articles: list<\App\Domain\Article>, pagination: array<string, int|string>}
-     */
     public function getCategoryPage(string $slugOrId, string $sort, string $order, int $page): array
     {
         $category = $this->resolveCategory($slugOrId);

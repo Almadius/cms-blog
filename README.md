@@ -25,7 +25,15 @@ docker compose exec php php bin/migrate.php
 docker compose exec php php bin/seed.php
 ```
 
+Пересоздать демо-данные:
+
+```bash
+docker compose exec php php bin/seed.php --force
+```
+
 Откройте http://localhost:8080
+
+> MySQL пробрасывается на хост-порт **3307** (чтобы не конфликтовать с локальным MySQL на 3306). Внутри Docker PHP подключается к `mysql:3306` автоматически.
 
 ## Локальная установка
 
@@ -61,14 +69,6 @@ templates/       — Smarty-шаблоны
 migrations/      — SQL-миграции
 bin/             — CLI: migrate.php, seed.php
 ```
-
-## Архитектурные решения
-
-- **DIP**: контроллеры зависят от сервисов, сервисы — от интерфейсов репозиториев
-- **DI Container** (`src/Container.php`) — ручная сборка зависимостей без сторонних библиотек
-- **Миграции** — отдельные `.sql` файлы, трекинг в таблице `migrations`
-- **Просмотры** — атомарный `UPDATE articles SET views_count = views_count + 1`
-- **Похожие статьи** — по пересечению категорий (`COUNT` + `ORDER BY match_count DESC`)
 
 ## Лицензия
 

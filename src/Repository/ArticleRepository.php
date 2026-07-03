@@ -152,9 +152,6 @@ final class ArticleRepository implements ArticleRepositoryInterface
         return $this->hydrateArticles($stmt->fetchAll());
     }
 
-    /**
-     * @return list<Category>
-     */
     private function loadCategories(int $articleId): array
     {
         $sql = <<<'SQL'
@@ -180,19 +177,11 @@ final class ArticleRepository implements ArticleRepositoryInterface
         }, $rows);
     }
 
-    /**
-     * @param list<array<string, mixed>> $rows
-     * @return list<Article>
-     */
     private function hydrateArticles(array $rows): array
     {
         return array_map(fn (array $row): Article => $this->hydrateArticle($row), $rows);
     }
 
-    /**
-     * @param array<string, mixed> $row
-     * @param list<Category> $categories
-     */
     private function hydrateArticle(array $row, array $categories = []): Article
     {
         return new Article(

@@ -6,12 +6,8 @@ namespace App\Http;
 
 use Closure;
 
-/**
- * Minimal regex-based router — no external dependencies.
- */
 final class Router
 {
-    /** @var list<array{method: string, pattern: string, handler: Closure}> */
     private array $routes = [];
 
     public function get(string $pattern, Closure $handler): void

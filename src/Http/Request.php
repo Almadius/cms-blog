@@ -6,9 +6,6 @@ namespace App\Http;
 
 final class Request
 {
-    /**
-     * @param array<string, string> $routeParams
-     */
     public function __construct(
         private readonly string $method,
         private readonly string $uri,

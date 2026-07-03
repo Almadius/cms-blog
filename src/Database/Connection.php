@@ -7,9 +7,6 @@ namespace App\Database;
 use App\Config;
 use PDO;
 
-/**
- * PDO factory — single connection per request lifecycle.
- */
 final class Connection
 {
     private static ?PDO $pdo = null;
@@ -35,7 +32,6 @@ final class Connection
         return self::$pdo;
     }
 
-    /** Reset connection — useful in tests or CLI scripts. */
     public static function reset(): void
     {
         self::$pdo = null;

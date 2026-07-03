@@ -17,9 +17,6 @@ final class ArticleService
     ) {
     }
 
-    /**
-     * @return array{article: Article, similar: list<Article>}
-     */
     public function getArticlePage(string $slugOrId): array
     {
         $article = $this->resolveArticle($slugOrId);

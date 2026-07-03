@@ -17,5 +17,6 @@ if (file_exists($root . '/.env')) {
 
 $config = new Config(require $root . '/config/app.php');
 $pdo = Connection::get($config);
+$force = in_array('--force', $argv ?? [], true);
 $seeder = new Seeder($pdo);
-$seeder->run();
+$seeder->run($force);

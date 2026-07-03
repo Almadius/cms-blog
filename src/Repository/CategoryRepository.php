@@ -52,9 +52,6 @@ final class CategoryRepository implements CategoryRepositoryInterface
         return $row ? $this->hydrate($row) : null;
     }
 
-    /**
-     * @param array<string, mixed> $row
-     */
     private function hydrate(array $row): Category
     {
         return new Category(

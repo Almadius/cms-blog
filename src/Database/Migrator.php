@@ -7,9 +7,6 @@ namespace App\Database;
 use PDO;
 use RuntimeException;
 
-/**
- * Runs numbered SQL migration files in order, tracking applied migrations.
- */
 final class Migrator
 {
     public function __construct(
@@ -61,9 +58,6 @@ final class Migrator
         $this->pdo->exec($sql);
     }
 
-    /**
-     * @return list<string>
-     */
     private function getAppliedMigrations(): array
     {
         try {
