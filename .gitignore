@@ -1,0 +1,10 @@
+/vendor/
+/.env
+/node_modules/
+/public/assets/css/style.css.map
+/.idea/
+/.vscode/
+*.log
+.DS_Store
+/templates_c/
+/cache/
